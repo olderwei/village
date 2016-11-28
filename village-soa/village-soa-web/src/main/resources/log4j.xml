@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+		</filter>
+	</appender>
+
+	<appender name="FILE-DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<param name="Append" value="true"/>
+		<param name="file" value="/export/Logs/village-soa.com/debug.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG"/>
+		</filter>
+	</appender>
+
+	<appender name="FILE-INFO" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<param name="Append" value="true"/>
+		<param name="file" value="/export/Logs/village-soa.com/info.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG"/>
+		</filter>
+	</appender>
+
+	<appender name="FILE-ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<param name="Append" value="true"/>
+		<param name="file" value="/export/Logs/village-soa.com/error.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG"/>
+		</filter>
+	</appender>
+
+	<appender name="FILE-SQL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Append" value="true"/>
+		<param name="file" value="/export/Logs/village-soa.com/sql.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG"/>
+		</filter>
+	</appender>
+
+	<category name="java.sql" additivity="false">
+		<priority value="DEBUG" />
+		<appender-ref ref="FILE-SQL"/>
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="com.ibatis" additivity="false">
+		<priority value="DEBUG" />
+		<appender-ref ref="FILE-SQL"/>
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="com.jd.cmc" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="FILE-INFO"/>
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="FILE-DEBUG"/>
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</log4j:configuration>
