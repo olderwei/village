@@ -34,6 +34,11 @@
             <!--项目内-->
             <dependency>
                 <groupId>com.village</groupId>
+                <artifactId>village-soa-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.village</groupId>
                 <artifactId>village-soa-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -78,6 +83,18 @@
                     <exclusion>
                         <groupId>javax.mail</groupId>
                         <artifactId>mail</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.jms</groupId>
+                        <artifactId>jms</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.jdmk</groupId>
+                        <artifactId>jmxtools</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.jmx</groupId>
+                        <artifactId>jmxri</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -288,7 +305,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.0.2</version>
+                <version>4.5.2</version>
             </dependency>
 
             <dependency>

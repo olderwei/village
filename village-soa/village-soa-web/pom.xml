@@ -14,6 +14,10 @@
     <dependencies>
         <dependency>
             <groupId>com.village</groupId>
+            <artifactId>village-soa-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.village</groupId>
             <artifactId>village-soa-service</artifactId>
         </dependency>
         <!--spring-->
@@ -127,14 +131,7 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

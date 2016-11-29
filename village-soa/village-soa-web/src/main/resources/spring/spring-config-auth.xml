@@ -8,5 +8,11 @@
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd"
        default-lazy-init="false" default-autowire="byName">
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/api/**"/>
+            <bean class="com.village.soa.web.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>

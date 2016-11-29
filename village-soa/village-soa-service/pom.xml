@@ -16,6 +16,15 @@
             <groupId>com.village</groupId>
             <artifactId>village-soa-manager</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

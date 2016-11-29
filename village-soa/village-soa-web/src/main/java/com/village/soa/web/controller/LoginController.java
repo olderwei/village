@@ -1,5 +1,6 @@
 package com.village.soa.web.controller;
 
+import com.village.soa.service.domain.result.BaseResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,5 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/api/login")
 public class LoginController {
 
+    @RequestMapping(value = "/login")
+    public BaseResult login() {
+
+        return new BaseResult();
+    }
 
 }

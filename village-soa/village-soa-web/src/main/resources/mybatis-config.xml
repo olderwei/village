@@ -6,5 +6,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="account" type="com.village.soa.domain.Account"/>
+        <typeAlias alias="villager" type="com.village.soa.domain.Villager"/>
     </typeAliases>
 </configuration>

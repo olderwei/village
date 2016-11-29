@@ -21,6 +21,7 @@
 		</property>
 	</bean>
 
+	<import resource="spring/spring-config-auth.xml" />
 	<import resource="spring/spring-datasource.xml" />
 	<import resource="spring/spring-redis.xml" />
 
